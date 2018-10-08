@@ -1,0 +1,22 @@
+version: '3.2'
+services:
+  emlo-converter:
+    build: "./converter"
+    image: "emlo-converter"
+    volumes:
+      - ./data:/app/data
+  emlo-fuseki:
+    build: "./fuseki"
+    image: "emlo-fuseki"
+    ports:
+      - "3030:3030"
+    restart: "unless-stopped"
+    user: "9008"
+    logging:
+      options:
+        max-size: "1g"
+    volumes:
+      - ./data:/app/data
+      - emlo-fuseki-data:/fuseki-base/databases
+volumes:
+  emlo-fuseki-data:
