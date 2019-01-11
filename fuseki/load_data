@@ -1,7 +1,8 @@
 #!/bin/sh
 
-rm -r $FUSEKI_BASE/databases/* \
-&& $TDBLOADER --graph=$EMLO_GRAPH $EMLO_TTL \
+rm -r $FUSEKI_BASE/databases/*
+
+$TDBLOADER --graph=$EMLO_GRAPH $EMLO_TTL \
 && $TEXTINDEXER \
 && $TDBSTATS --graph urn:x-arq:UnionGraph > /tmp/stats.opt \
 && mv /tmp/stats.opt $FUSEKI_BASE/databases/tdb/
