@@ -1,6 +1,6 @@
 FROM openjdk:jre-alpine
 
-MAINTAINER Jouni Tuominen <jouni.tuominen@aalto.fi>
+LABEL org.opencontainers.image.authors="jouni.tuominen@aalto.fi"
 
 ENV SBT_VERSION 0.13.15
 

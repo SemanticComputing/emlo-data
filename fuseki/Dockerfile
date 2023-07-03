@@ -1,6 +1,6 @@
 FROM secoresearch/fuseki
 
-MAINTAINER Jouni Tuominen <jouni.tuominen@aalto.fi>
+LABEL org.opencontainers.image.authors="jouni.tuominen@aalto.fi"
 
 ENV EMLO_TTL /app/data/emlo.ttl
 
