@@ -12,6 +12,9 @@ RUN apk add --no-cache bash git curl && \
     chmod 0755 /usr/local/bin/sbt && \
     rm -rf /var/cache/apk/*
 
+# https://stackoverflow.com/questions/56945125/force-docker-to-rebuild-a-layer-based-on-latest-commit-of-a-git-repo
+ADD https://api.github.com/repos/jiemakel/anything2rdf/git/refs/heads/master /tmp/version.json
+
 WORKDIR /app
 
 RUN git clone https://github.com/jiemakel/anything2rdf.git .
